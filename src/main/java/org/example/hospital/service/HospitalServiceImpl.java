@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 @Transactional
 
 public class HospitalServiceImpl implements IHospitalService {
+
     private PatientRepository patientRepository;
     private MedecinRepository medecinRepository;
     private RendezVousRepository rendezVousRepository;

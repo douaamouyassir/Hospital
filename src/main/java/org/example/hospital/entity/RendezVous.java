@@ -5,22 +5,20 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-
+import jakarta.persistence.Id;
 import java.util.Date;
 @Entity
 @Data @NoArgsConstructor
 @AllArgsConstructor
 public class RendezVous {
-    @jakarta.persistence.Id
-    private Long id;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private Date date;
     @Enumerated(EnumType.STRING)
     private StatusRDV status;
     @ManyToOne
-    @JsonProperty(access = JsonProperty.Access.READ_WRITE)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Patient patient ;
     @ManyToOne
     private Medecin medecin ;

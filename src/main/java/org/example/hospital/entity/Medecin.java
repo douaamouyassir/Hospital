@@ -18,7 +18,7 @@ public class Medecin {
     private String Email ;
     private String Specialite ;
     @OneToMany(mappedBy = "medecin",fetch = FetchType.LAZY)
-    @JsonProperty(access = JsonProperty.Access.READ_WRITE)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Collection<RendezVous> rendezVous ;
 
 

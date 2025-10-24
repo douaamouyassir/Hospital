@@ -44,14 +44,16 @@ public class HospitalApplication {
                     .forEach(name -> {
                         Medecin medecin = new Medecin();
                         medecin.setNom(name);
-                        medecin.setEmail(name + "@gmail.com"); // Correction : setEmail au lieu de getEmail
-                        medecin.setSpecialite(Math.random() > 0.5 ? "Cardio" : "Dentiste"); // Correction : setSpecialite
+                        medecin.setEmail(name + "@gmail.com");
+                        medecin.setSpecialite(Math.random() > 0.5 ? "Cardio" : "Dentiste");
                         /*medecinRepository.save(medecin);*/
                         hospitalService.saveMedecin(medecin);
                     });
 
 
             Patient patient = patientRepository.findById(1L).orElse(null);
+            Patient patient1 = patientRepository.findByNom("Mohamed");
+
             Medecin medecin = medecinRepository.findByNom("Yasmine");
 
 
